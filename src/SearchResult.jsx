@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Track from './Track'
 
-function SearchResult({ query }) {
+function SearchResult({ query , onAdd}) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -39,17 +40,10 @@ function SearchResult({ query }) {
   }, [query]);
 
   return (
-    <div>
-      {loading && <p>Cargando...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {data && (
-        <>
-            <h1>¡Pokémon encontrado!</h1>
-            <p>Nombre: {data.name}</p>
-            <p>ID: {data.id}</p>
-            <img src={data.sprites.front_default} alt={data.name} />
-        </>
-      )}
+    <div className="Resultado">
+        {loading && <p>Cargando...</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <Track data={data} onAdd={onAdd}/>
     </div>
   );
 }

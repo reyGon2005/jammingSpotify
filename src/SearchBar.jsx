@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import SearchResult from './SearchResult'
 
-function SearchBar(){
+function SearchBar({onAdd}){
 
     const [inputValue, setInputValue] = useState("");
     const [query, setQuery] = useState("");
@@ -26,7 +26,7 @@ function SearchBar(){
                 />
                 <button type="submit">Buscar</button>
             </form>
-            <SearchResult query={query} />
+            <SearchResult query={query} onAdd={onAdd}/>
         </>
     );
 }

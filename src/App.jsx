@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
 import './App.css'
+import TrackList from './TrackList'
 
 import SearchBar from './SearchBar'
 
-function App() {
+function App(prop) {
+  
+  const [lsitaPokemon, setListaPokemon] = useState([]);
+
+  function addPokemon(){
+    setListaPokemon([...lsitaPokemon, pokemon]);
+  }
+
   return (
     <>
-      <SearchBar/>
+      <SearchBar onAdd={addPokemon}/>
+      <TrackList listaPokemon={lsitaPokemon}/>
     </>
   )
 }
