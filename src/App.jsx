@@ -16,10 +16,14 @@ function App() {
   }
 
   return (
-    <>
-      <SearchBar onAdd={addPokemon}/>
-      <TrackList listaPokemon={lsitaPokemon} onClear={clearList}/>
-    </>
+    <div className="App-container">
+      <div className="left-panel">
+        <SearchBar onAdd={addPokemon}/>
+      </div>
+      <div className="right-panel">
+        <TrackList listaPokemon={lsitaPokemon} onClear={clearList}/>
+      </div>
+    </div>
   )
 }
 

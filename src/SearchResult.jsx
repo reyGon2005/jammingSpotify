@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Track from './Track'
+import './App.css'
 
 function SearchResult({ query , onAdd}) {
   const [data, setData] = useState(null);
@@ -40,7 +41,7 @@ function SearchResult({ query , onAdd}) {
   }, [query]);
 
   return (
-    <div className="Resultado">
+    <div className="resultado">
         {loading && <p>Cargando...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
         <Track data={data} onAdd={onAdd}/>

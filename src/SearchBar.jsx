@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import SearchResult from './SearchResult'
+import "./App.css";
 
 function SearchBar({onAdd}){
 
@@ -24,7 +25,7 @@ function SearchBar({onAdd}){
                     value={inputValue}
                     onChange={handleInputChange}
                 />
-                <button type="submit">Buscar</button>
+                <button className="boton-buscar" type="submit">Buscar</button>
             </form>
             <SearchResult query={query} onAdd={onAdd}/>
         </>
